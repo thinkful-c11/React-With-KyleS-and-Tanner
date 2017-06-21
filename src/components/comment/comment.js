@@ -1,12 +1,14 @@
 import React from 'react';
 import LikeButton from '../likeButton/likeButton.js';
+import DeleteButton from '../deleteButton/deleteButton.js';
 import './comment.css';
 
 export default function Comment(props){
   return (
     <div className="comment">
       <li key={props.index}>{props.comments.comment}</li>
-      <LikeButton onClick={()=> props.onClick(props.index)} likes={props.comments.likes}/>
+      <LikeButton likeClick={()=> props.likeClick(props.index)} likes={props.comments.likes}/>
+      <DeleteButton deleteClick={()=> props.deleteClick(props.index)} />
     </div>
   );
 }
