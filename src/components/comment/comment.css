@@ -1,0 +1,10 @@
+.comment {
+  border: 2px black solid;
+  border-radius: 3px;
+  background-color: #ededed;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+}
