@@ -24,7 +24,7 @@ export default class Container extends React.Component {
     //   }
     //   return comment;
     // })
-  const likes = this.state.comments[_index].likes + 1;
+    const likes = this.state.comments[_index].likes + 1;
     this.state.comments[_index].likes = likes
     this.setState({
       comments: this.state.comments
@@ -41,11 +41,21 @@ export default class Container extends React.Component {
       comments
     })
   }
+  setUpdate(inputValue, index){
+    const updateComment = this.state.comments[index].comment;
+    this.state.comments[index].comment = inputValue;
+    this.setState({
+      comments:this.state.comments
+    });
+  }
 
   render() {
     return (
       <div className="container">
-        <CommentContainer deleteClick={(index)=> this.deleteComment(index)} likeClick={(index)=> this.setLikes(index)} comments={this.state.comments}/>
+        <CommentContainer deleteClick={(index)=> this.deleteComment(index)} 
+          likeClick={(index)=> this.setLikes(index)} 
+          updateClick={(inputValue, index)=>this.setUpdate(inputValue,index)}
+          comments={this.state.comments}/>
         <InputContainer onSubmit={(textValue)=> this.setComment(textValue)}/>
       </div>
     )

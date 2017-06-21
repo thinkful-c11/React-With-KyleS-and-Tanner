@@ -4,7 +4,11 @@ import './commentContainer.css';
 
 export default function CommentContainer(props){
   const comments = props.comments.map((comment, key) => {
-    return <Comment deleteClick={(index)=> props.deleteClick(index)} likeClick={(index)=> props.likeClick(index)} key={key} index={key} comments={comment}/>
+    return <Comment 
+    deleteClick={(index)=> props.deleteClick(index)} 
+    likeClick={(index)=> props.likeClick(index)} 
+    updateClick={(inputValue,index)=>props.updateClick(inputValue,index)}
+    key={key} index={key} comments={comment}/>
   });
   return (
   <div className="commentContainer">

@@ -3,6 +3,6 @@ import './addButton.css';
 
 export default function AddButton(props){
   return (
-    <button onClick={()=> props.onSubmit()} type="submit">Add</button>
+    <button onClick={()=> props.onSubmit()} type="button">{props.name}</button>
   );
 }
